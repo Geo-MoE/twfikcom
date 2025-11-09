@@ -12,21 +12,27 @@ import AboutPage from './pages/AboutPage';
 import BlogPage from './pages/BlogPage';
 import ArticlePage from './pages/ArticlePage';
 import BodyWeightCalculatorPage from './pages/BodyWeightCalculatorPage';
+import DomainsPage from './pages/DomainsPage';
+import DomainListing from './components/DomainListing';
+import Modal from './components/Modal';
+import DomainInquiryForm from './components/DomainInquiryForm';
 import Loader from './components/Loader';
 import AnimateOnScroll from './components/AnimateOnScroll';
 import AnimatedBackground from './components/AnimatedBackground';
 import { useSeo } from './hooks/useSeo';
 import { useSchema } from './hooks/useSchema';
-import { NAV_LINKS, SERVICES, ARTICLES } from './constants';
+import { NAV_LINKS, SERVICES, ARTICLES, DOMAINS } from './constants';
 import { useTranslation } from './hooks/useTranslation';
-import { LightbulbIcon, ToolsIcon, BrowserIcon } from './components/icons';
+import { LightbulbIcon, ToolsIcon, BrowserIcon, GlobeIcon } from './components/icons';
 
-type View = 'main' | 'websites' | 'tools' | 'prompts' | 'seo' | 'serviceDetail' | 'about' | 'blog' | 'articleDetail' | 'bodyWeightCalculator';
+type View = 'main' | 'websites' | 'tools' | 'prompts' | 'domains' | 'seo' | 'serviceDetail' | 'about' | 'blog' | 'articleDetail' | 'bodyWeightCalculator';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [currentServiceId, setCurrentServiceId] = useState<number | null>(null);
   const [currentArticleId, setCurrentArticleId] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [inquiredDomain, setInquiredDomain] = useState<string | null>(null);
   const { t } = useTranslation();
   const [view, setView] = useState<View>('main');
 
@@ -53,7 +59,6 @@ const App: React.FC = () => {
       }
   }, []);
 
-
   const sectionRefs = useRef(NAV_LINKS.reduce((acc, value) => {
     if (value.type === 'section') {
       acc[value.id] = createRef<HTMLDivElement>();
@@ -64,6 +69,16 @@ const App: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [view, currentServiceId, currentArticleId]);
+  
+  const handleDomainInquire = useCallback((domainName: string) => {
+    setInquiredDomain(domainName);
+    setIsModalOpen(true);
+  }, []);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setInquiredDomain(null);
+  };
 
   const navigateToService = useCallback((id: number) => {
     setCurrentServiceId(id);
@@ -141,6 +156,8 @@ const App: React.FC = () => {
         return <ToolsPage onBack={handleBackToMain} onItemClick={navigateToService} />;
       case 'prompts':
         return <PromptsPage onBack={handleBackToMain} onItemClick={navigateToService} />;
+      case 'domains':
+        return <DomainsPage onBack={handleBackToMain} onDomainInquire={handleDomainInquire} />;
       case 'seo':
         return <SeoPage onBack={handleBackToMain} />;
       case 'about':
@@ -170,13 +187,20 @@ const App: React.FC = () => {
                         </p>
                     </AnimateOnScroll>
                     <AnimateOnScroll delay={400}>
-                        <div className="mt-12 flex justify-center items-start space-x-8 md:space-x-16 rtl:space-x-reverse">
+                        <div className="mt-12 flex justify-center items-start space-x-6 md:space-x-12 lg:space-x-16 rtl:space-x-reverse">
                             <div
                                 className="flex flex-col items-center group cursor-pointer"
-                                onClick={() => setView('websites')}
+                                onClick={() => handleNavClick('websites', 'section')}
                             >
                                 <BrowserIcon className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-300 transform group-hover:scale-110" />
                                 <span className="mt-2 text-sm font-semibold text-gray-400 group-hover:text-white transition-colors duration-300">{t('nav.websites')}</span>
+                            </div>
+                            <div
+                                className="flex flex-col items-center group cursor-pointer"
+                                onClick={() => handleNavClick('domains', 'section')}
+                            >
+                                <GlobeIcon className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-300 transform group-hover:scale-110" />
+                                <span className="mt-2 text-sm font-semibold text-gray-400 group-hover:text-white transition-colors duration-300">{t('nav.domains')}</span>
                             </div>
                             <div
                                 className="flex flex-col items-center group cursor-pointer"
@@ -216,9 +240,28 @@ const App: React.FC = () => {
                     </AnimateOnScroll>
                 </div>
             </section>
+            
+            {/* Domains Section */}
+            <section ref={sectionRefs.current.domains} className="bg-light-bg dark:bg-dark-card/20">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+                    <AnimateOnScroll className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-extrabold font-heading uppercase">{t('domains.title')}</h2>
+                        <p className="text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">{t('domains.subtitle')}</p>
+                    </AnimateOnScroll>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                        {DOMAINS.slice(0, 3).map((domain, index) => 
+                            <DomainListing key={domain.id} domain={domain} onInquire={handleDomainInquire} index={index} />
+                        )}
+                    </div>
+                    <AnimateOnScroll className="text-center">
+                        <button onClick={() => setView('domains')} className="bg-primary hover:bg-primary-hover dark:bg-white dark:hover:bg-gray-200 text-white dark:text-dark-bg font-bold py-3 px-8 rounded-lg transition-colors duration-300">{t('common.viewAll')}</button>
+                    </AnimateOnScroll>
+                </div>
+            </section>
+
 
             {/* Other Services Section */}
-            <section className="bg-light-bg dark:bg-dark-card/20">
+            <section>
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
                     <AnimateOnScroll className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-extrabold font-heading uppercase">{t('home.otherServices.title')}</h2>
@@ -295,6 +338,9 @@ const App: React.FC = () => {
         {renderContent()}
       </div>
       <Footer onNavClick={(id, type) => handleNavClick(id, type)} />
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {inquiredDomain && <DomainInquiryForm domainName={inquiredDomain} />}
+      </Modal>
     </div>
   );
 };

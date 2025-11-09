@@ -23,6 +23,14 @@ export interface Service {
   previewUrl?: string;
 }
 
+export interface Domain {
+    id: string;
+    name: string;
+    price: string;
+    tagline: string;
+    keywords: string[];
+}
+
 export interface ServiceDetails {
     title: string;
     shortDescription: string;

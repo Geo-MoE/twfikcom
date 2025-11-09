@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useTranslation } from './useTranslation';
-import { ServiceDetails, ArticleDetails, Service, Article, QuestionAnswer } from '../types';
-import { SERVICES, ARTICLES } from '../constants';
+import { ServiceDetails, ArticleDetails, Service, Article, QuestionAnswer, Domain } from '../types';
+import { SERVICES, ARTICLES, DOMAINS } from '../constants';
 
 interface SchemaProps {
     view: string;
@@ -179,6 +179,33 @@ export const useSchema = ({ view, serviceId, articleId }: SchemaProps) => {
                     "description": (getTranslationObject('seo.seo') as any).description,
                     "provider": ORG_SCHEMA,
                     "serviceType": "Search engine optimization service"
+                };
+                break;
+            
+            case 'domains':
+                const domainsPageDetails: any = getTranslationObject(`domains.seo`);
+                schema = {
+                    "@context": "https://schema.org",
+                    "@type": "CollectionPage",
+                    "url": `${mainUrl}/domains`,
+                    "name": domainsPageDetails.title,
+                    "description": domainsPageDetails.description,
+                    "publisher": ORG_SCHEMA,
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "itemListElement": DOMAINS.map((domain: Domain, index: number) => ({
+                            "@type": "Product",
+                            "name": domain.name,
+                            "description": domain.tagline,
+                            "url": `${mainUrl}/domains#${domain.id}`,
+                            "position": index + 1,
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "USD",
+                                "price": domain.price.replace(/[^0-9.]/g, '')
+                            }
+                        }))
+                    }
                 };
                 break;
 

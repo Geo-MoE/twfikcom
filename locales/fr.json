@@ -2,6 +2,7 @@
   "nav": {
     "index": "Accueil",
     "websites": "Sites Web",
+    "domains": "Domaines",
     "tools": "Outils",
     "prompts": "Prompts",
     "blog": "Blog",
@@ -41,6 +42,21 @@
       "title": "Services de Développement de Sites Web Sur Mesure | TWFIK Digital",
       "description": "Explorez notre portfolio de sites web sur mesure conçus pour la performance, l'expérience utilisateur et l'évolutivité.",
       "keywords": "sites web sur mesure, conception web, développement web, sites e-commerce"
+    }
+  },
+  "domains": {
+    "title": "Domaines Premium",
+    "subtitle": "Sécurisez un nom de domaine unique et mémorable pour votre prochain grand projet.",
+    "inquire": "Se Renseigner",
+    "inquiry": {
+      "title": "Se Renseigner sur le Domaine",
+      "subtitle": "Vous vous renseignez sur le domaine :",
+      "submit": "Envoyer la Demande"
+    },
+    "seo": {
+      "title": "Noms de Domaine Premium à Vendre | TWFIK Digital",
+      "description": "Parcourez notre collection de noms de domaine premium pour les startups technologiques, les projets d'IA et les entreprises numériques.",
+      "keywords": "domaines premium, noms de domaine à vendre, domaines de startup, domaines tech"
     }
   },
   "tools": {
@@ -258,7 +274,7 @@
       ],
       "gallery": [
         "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQxNTV8&ixlib=rb-4.0.3&q=80&w=1080",
-        "https://images.unsplash.com/photo-1585160223126-12a8385a4291?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQyMjZ8&ixlib-rb-4.0.3&q=80&w=1080"
+        "https://images.unsplash.com/photo-1585160223126-12a8385a4291?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQyMjZ8&ixlib=rb-4.0.3&q=80&w=1080"
       ],
       "faq": [
         {

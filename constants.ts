@@ -1,9 +1,11 @@
 
-import { Service, Article } from './types';
+
+import { Service, Article, Domain } from './types';
 
 export const NAV_LINKS = [
   { id: 'index', type: 'section' },
   { id: 'websites', type: 'section' },
+  { id: 'domains', type: 'section' },
   { id: 'tools', type: 'page' },
   { id: 'prompts', type: 'page' },
   { id: 'blog', type: 'page' },
@@ -66,6 +68,15 @@ export const SERVICES: Service[] = [
     cardImage: 'https://twfik.com/AIPrompt.png',
     formspreeEndpoint: 'https://formspree.io/f/xblpnbep',
   },
+];
+
+export const DOMAINS: Domain[] = [
+  { id: 'd1', name: 'pixelperfect.ai', price: '$2500', tagline: 'Premium domain for AI-powered design tools.', keywords: ['AI', 'Design', 'SaaS'] },
+  { id: 'd2', name: 'promptfoundry.com', price: '$1800', tagline: 'Marketplace for high-quality AI prompts.', keywords: ['AI', 'Prompts', 'Marketplace'] },
+  { id: 'd3', name: 'devlaunch.io', price: '$3000', tagline: 'The ultimate launchpad for developer tools.', keywords: ['Developer', 'Tools', 'SaaS', 'IO'] },
+  { id: 'd4', name: 'seobotify.com', price: '$2200', tagline: 'Automated SEO solutions and analytics.', keywords: ['SEO', 'AI', 'Automation', 'Marketing'] },
+  { id: 'd5', name: 'codecanvas.dev', price: '$1500', tagline: 'A creative space for developers to showcase projects.', keywords: ['Code', 'Portfolio', 'Developer'] },
+  { id: 'd6', name: 'marketwizard.ai', price: '$4000', tagline: 'AI-driven market analysis and prediction platform.', keywords: ['AI', 'Finance', 'Market', 'SaaS'] }
 ];
 
 

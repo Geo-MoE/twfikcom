@@ -2,6 +2,7 @@
   "nav": {
     "index": "Inicio",
     "websites": "Sitios Web",
+    "domains": "Dominios",
     "tools": "Herramientas",
     "prompts": "Prompts",
     "blog": "Blog",
@@ -41,6 +42,21 @@
       "title": "Servicios de Desarrollo de Sitios Web Personalizados | TWFIK Digital",
       "description": "Explora nuestro portafolio de sitios web personalizados diseñados para el rendimiento, la experiencia del usuario y la escalabilidad.",
       "keywords": "sitios web personalizados, diseño web, desarrollo web, sitios de comercio electrónico"
+    }
+  },
+  "domains": {
+    "title": "Dominios Premium",
+    "subtitle": "Asegura un nombre de dominio único y memorable para tu próximo gran proyecto.",
+    "inquire": "Consultar",
+    "inquiry": {
+      "title": "Consultar sobre Dominio",
+      "subtitle": "Estás consultando sobre el dominio:",
+      "submit": "Enviar Consulta"
+    },
+    "seo": {
+      "title": "Nombres de Dominio Premium en Venta | TWFIK Digital",
+      "description": "Explora nuestra colección curada de nombres de dominio premium para startups tecnológicas, proyectos de IA y negocios digitales.",
+      "keywords": "dominios premium, nombres de dominio en venta, dominios para startups, dominios de tecnología"
     }
   },
   "tools": {
@@ -258,7 +274,7 @@
       ],
       "gallery": [
         "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQxNTV8&ixlib=rb-4.0.3&q=80&w=1080",
-        "https://images.unsplash.com/photo-1585160223126-12a8385a4291?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQyMjZ8&ixlib-rb-4.0.3&q=80&w=1080"
+        "https://images.unsplash.com/photo-1585160223126-12a8385a4291?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQyMjZ8&ixlib=rb-4.0.3&q=80&w=1080"
       ],
       "faq": [
         {
@@ -295,7 +311,7 @@
         "Fácil de Actualizar"
       ],
       "gallery": [
-        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQyNTJ8&ixlib-rb-4.0.3&q=80&w=1080"
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQyNTJ8&ixlib=rb-4.0.3&q=80&w=1080"
       ],
       "faq": [
         {

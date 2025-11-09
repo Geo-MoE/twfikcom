@@ -2,6 +2,7 @@
   "nav": {
     "index": "الرئيسية",
     "websites": "مواقع الويب",
+    "domains": "النطاقات",
     "tools": "الأدوات",
     "prompts": "التلقينات",
     "blog": "المدونة",
@@ -41,6 +42,21 @@
       "title": "خدمات تطوير مواقع الويب المخصصة | توفيق الرقمية",
       "description": "استكشف مجموعتنا من مواقع الويب المصممة خصيصًا للأداء وتجربة المستخدم وقابلية التوسع.",
       "keywords": "مواقع مخصصة, تصميم مواقع, تطوير ويب, متاجر إلكترونية"
+    }
+  },
+  "domains": {
+    "title": "نطاقات مميزة",
+    "subtitle": "احصل على اسم نطاق فريد ولا يُنسى لمشروعك الكبير القادم.",
+    "inquire": "استفسر",
+    "inquiry": {
+      "title": "استفسار عن نطاق",
+      "subtitle": "أنت تستفسر عن النطاق:",
+      "submit": "إرسال الاستفسار"
+    },
+    "seo": {
+      "title": "أسماء نطاقات مميزة للبيع | توفيق الرقمية",
+      "description": "تصفح مجموعتنا المختارة من أسماء النطاقات المتميزة للشركات الناشئة في مجال التكنولوجيا ومشاريع الذكاء الاصطناعي والأعمال الرقمية.",
+      "keywords": "نطاقات مميزة, أسماء نطاقات للبيع, نطاقات للشركات الناشئة, نطاقات تقنية"
     }
   },
   "tools": {
@@ -258,7 +274,7 @@
       ],
       "gallery": [
         "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQxNTV8&ixlib=rb-4.0.3&q=80&w=1080",
-        "https://images.unsplash.com/photo-1585160223126-12a8385a4291?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQyMjZ8&ixlib-rb-4.0.3&q=80&w=1080"
+        "https://images.unsplash.com/photo-1585160223126-12a8385a4291?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTGizDB8MHwxfGFsbHx8fHx8fHx8fDE3MTgxOTQyMjZ8&ixlib=rb-4.0.3&q=80&w=1080"
       ],
       "faq": [
         {
